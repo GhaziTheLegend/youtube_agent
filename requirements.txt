@@ -1,0 +1,40 @@
+# --- Core / config ---
+pydantic>=2.6
+pyyaml>=6.0
+python-dotenv>=1.0
+click>=8.1
+
+# --- LLM (research, scripting, metadata) ---
+anthropic>=0.40          # optional - only if you use Claude
+google-genai>=0.3        # Gemini API SDK (current package name; the old
+                          # google-generativeai package is deprecated)
+
+# --- Voiceover (TTS) - pick one via production.tts_provider in channel config ---
+edge-tts>=6.1           # free, high quality, network-dependent (default)
+mutagen>=1.47             # edge-tts: reads real mp3 duration - never trust estimates
+piper-tts>=1.6             # free, fully offline alternative if edge-tts is network-blocked
+faster-whisper>=1.0        # piper backend uses this for word-level caption timing
+# elevenlabs>=1.0          # uncomment if you upgrade to a paid, higher-quality voice
+
+# --- Media assembly (Phase 3) ---
+moviepy>=1.0.3
+ffmpeg-python>=0.2.0
+
+# --- YouTube upload + analytics (Phase 4-5) ---
+google-api-python-client>=2.130
+google-auth-httplib2>=0.2
+google-auth-oauthlib>=1.2
+
+# --- Scheduling (Phase 4) ---
+apscheduler>=3.10
+
+# --- Data / DB (Phase 1 onward) ---
+sqlalchemy>=2.0
+pandas>=2.2
+
+# --- Testing ---
+pytest>=8.0
+
+# --- HTTP (stock media APIs, trend sources) ---
+requests>=2.31
+

@@ -1,0 +1,67 @@
+# Example channel config. Copy this file per channel, e.g. channels/cookingranks.yaml
+# Every field here is validated by agent/config.py -> ChannelConfig
+
+channel_id: techreviews
+channel_name: "TechBrief Shorts"
+niche: "AI tools and gadgets for students"
+content_pillars:
+  - "AI tool reviews"
+  - "productivity gadget rankings"
+  - "student tech hacks"
+  - "budget vs premium comparisons"
+target_audience: "university students, 18-24, budget-conscious, tech-curious"
+language: en
+
+research:
+  ideas_per_cycle: 8
+  seed_keywords:
+    - "best ai tools for students"
+    - "budget laptop accessories"
+    - "productivity apps 2026"
+  sources:
+    - llm_synthesis
+    - google_trends
+
+script:
+  target_duration_seconds: 45
+  tone: "energetic, punchy, slightly opinionated"
+  must_include:
+    - "one clear recommendation or ranking by the end"
+  must_avoid:
+    - "unverified price claims"
+  original_angle_required: true
+
+production:
+  voice_id: "en-US-GuyNeural"       # edge-tts voice name; swap per provider
+  tts_provider: edge_tts
+  visuals_source: stock_footage
+  aspect_ratio: "9:16"
+  captions_enabled: true
+  caption_style: "bold, centered, word-by-word highlight"
+  background_music_volume_db: -20.0
+
+metadata:
+  title_formula: "[Bold claim] | [Keyword] #shorts"
+  tags_strategy:
+    - "ai tools"
+    - "student productivity"
+    - "tech review"
+  category: "28"   # Science & Technology
+
+publishing:
+  schedule:
+    - day: monday
+      time: "18:00"
+      timezone: "Asia/Karachi"
+    - day: wednesday
+      time: "18:00"
+      timezone: "Asia/Karachi"
+    - day: friday
+      time: "18:00"
+      timezone: "Asia/Karachi"
+  default_visibility: private
+  require_manual_approval: true
+
+goals:
+  target_subscribers_90d: 5000
+  target_avg_views_per_short: 10000
